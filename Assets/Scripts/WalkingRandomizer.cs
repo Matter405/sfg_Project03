@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class WalkingRandomizer : MonoBehaviour
 {
-    public AudioClip[] audioClips; // Array of audio clips (1-maxAudioClips)
+    public AudioClip[] woodAudioClips;
+    public AudioClip[] gravelAudioClips;
     public int maxAudioClips = 6;
     private int previousNumber = 0;
     private AudioSource audioSource;
+    [SerializeField] private DetectPlane detectPlane;
+    private string planeName;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        planeName = detectPlane.GetPlaneName();
         if (Input.GetKeyDown(KeyCode.W) ||
             Input.GetKeyDown(KeyCode.A) ||
             Input.GetKeyDown(KeyCode.S) ||
@@ -24,7 +28,7 @@ public class WalkingRandomizer : MonoBehaviour
             int newNumber;
             do
             {
-                newNumber = Random.Range(1, (maxAudioClips+1)); // Generate between 1 (inclusive) and 7 (exclusive)
+                newNumber = Random.Range(1, (maxAudioClips+1)); // Generate between 1 and maxAudioClips
             } while (newNumber == previousNumber);
 
             previousNumber = newNumber;
@@ -35,13 +39,22 @@ public class WalkingRandomizer : MonoBehaviour
 
     void PlayAudioClip(int index)
     {
-        Debug.Log("Playing Audio");
         /*if (audioSource.isPlaying)
         {
             return; // Don't play if previous audio is still playing
-        }
+        }*/
 
-        audioSource.clip = audioClips[index];
-        audioSource.Play();*/
+        if(planeName == "Wood")
+        {
+            Debug.Log("Playing Wood Audio");
+            /*audioSource.clip = woodAudioClips[index];
+            audioSource.Play();*/
+        }
+        else if (planeName == "Gravel")
+        {
+            Debug.Log("Playing Gravel Audio");
+            /*audioSource.clip = gravelAudioClips[index];
+            audioSource.Play();*/
+        }
     }
  }

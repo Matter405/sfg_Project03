@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5656900235506783524}
   - component: {fileID: 5656900235506783525}
   - component: {fileID: 5656900235506783530}
-  - component: {fileID: 5656900235506783526}
   - component: {fileID: 5656900235506783521}
+  - component: {fileID: 5656900235506783526}
   - component: {fileID: 5656900235506783520}
+  - component: {fileID: 7903072598390952848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -100,20 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5656900235506783526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656900235506783531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2d34c8c80104a1fab2458906652a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClips: []
-  maxAudioClips: 6
 --- !u!54 &5656900235506783521
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,6 +117,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &5656900235506783526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656900235506783531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d34c8c80104a1fab2458906652a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodAudioClips: []
+  gravelAudioClips: []
+  maxAudioClips: 6
+  detectPlane: {fileID: 7903072598390952848}
 --- !u!114 &5656900235506783520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +146,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &7903072598390952848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656900235506783531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabcd1d253b484079b6e8e2e6340e32a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastDistance: 1
