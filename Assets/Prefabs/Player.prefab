@@ -131,15 +131,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodAudioClips:
-  - {fileID: 8300000, guid: da36a5cb7b94a49f081eefd83217c198, type: 3}
-  - {fileID: 8300000, guid: 3651940a6b088491da2bb19d789a3d17, type: 3}
-  - {fileID: 8300000, guid: fa1614719bb1d40ce99d656db07135da, type: 3}
-  - {fileID: 8300000, guid: 47a25db30d5dd43d3ad9b7bda94d6043, type: 3}
-  - {fileID: 8300000, guid: b2a4272e96d61455a82d981b9edfaea1, type: 3}
-  - {fileID: 8300000, guid: 893888bcd691e49f6b8d6b04ba481a05, type: 3}
-  gravelAudioClips: []
+  - {fileID: 8300000, guid: 3bbf6982d556e4ed8ac5ddd25a13042b, type: 3}
+  - {fileID: 8300000, guid: ba8ee25f6c0ee42f38b283f40060289e, type: 3}
+  - {fileID: 8300000, guid: a6b69d171364e4478a3096c9996d8392, type: 3}
+  - {fileID: 8300000, guid: 63fc9084280ed44b9b9e893fd198ac71, type: 3}
+  - {fileID: 8300000, guid: 0c72626b7381f460f8610104bfb44645, type: 3}
+  - {fileID: 8300000, guid: f64aba72735ea4743bc95e3f606d70ce, type: 3}
+  gravelAudioClips:
+  - {fileID: 8300000, guid: 2db002e1d77c74136924c0e0fbd2414e, type: 3}
+  - {fileID: 8300000, guid: c17fcba078cca4946b5bfdc3dee8026b, type: 3}
+  - {fileID: 8300000, guid: b52b203639b7b4f44ad7d40badbf88dc, type: 3}
+  - {fileID: 8300000, guid: 29cba7af4b466460e981f03b41dc0de9, type: 3}
+  - {fileID: 8300000, guid: 0bc43b46bb09342569d28864de93405a, type: 3}
+  - {fileID: 8300000, guid: 3ab75b6f431cd498787abefd16889743, type: 3}
   totalAudioClips: 6
-  audioSource: {fileID: 0}
   detectPlane: {fileID: 7903072598390952848}
 --- !u!114 &5656900235506783520
 MonoBehaviour:
