@@ -12,6 +12,7 @@ public class WalkingRandomizer : MonoBehaviour
     [SerializeField] private DetectPlane detectPlane;
     private string planeName;
     private bool isPlayingAudio = false;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -26,6 +27,7 @@ public class WalkingRandomizer : MonoBehaviour
                               Input.GetKey(KeyCode.D);
         Debug.Log(anyKeyPressed);
 
+
         if (anyKeyPressed)
         {
             int newNumber;
@@ -35,11 +37,10 @@ public class WalkingRandomizer : MonoBehaviour
             } while (newNumber == previousNumber);
 
             previousNumber = newNumber;
-            Debug.Log("Generated number: " + newNumber);
 
             if (!isPlayingAudio || !audioSource.isPlaying) // Play only if audio is not already playing
             {
-                StartCoroutine(PlayAudioClip(newNumber - 1)); // Adjust index for 0-based array
+                PlayAudioClip(newNumber - 1); // Adjust index for 0-based array
                 isPlayingAudio = true;
             }
         }
@@ -48,22 +49,20 @@ public class WalkingRandomizer : MonoBehaviour
             isPlayingAudio = false;
             audioSource.Stop(); // Ensure audio stops when key is released
         }
+
     }
 
-    IEnumerator PlayAudioClip(int index)
+    void PlayAudioClip(int index)
     {
         if(planeName == "Wood")
         {
-            Debug.Log("Playing Wood Audio");
             audioSource.clip = woodAudioClips[index];
             audioSource.Play();
-            yield return new WaitForSeconds(3.0f);
         }
         else if (planeName == "Gravel")
         {
-            Debug.Log("Playing Gravel Audio");
-            /*audioSource.clip = gravelAudioClips[index];
-            audioSource.Play();*/
+            audioSource.clip = gravelAudioClips[index];
+            audioSource.Play();
         }
     }
  }
